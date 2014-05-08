@@ -31,6 +31,7 @@ public class MyActivity extends FragmentActivity
 	@Override
 	protected void onRestart()
 	{
+
 		super.onRestart();
 		Log.d(TAG, "---> onRestart");
 	}
