@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Hello World, MyActivity"
+		android:id="@+id/textView" />
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Show Dialog"
+		android:id="@+id/btn_dialog"
+		android:layout_below="@+id/textView"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="67dp"
+		android:onClick="displayDialog"/>
+
+	<FrameLayout
+		android:id="@+id/fl_fragment_container"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_below="@+id/btn_dialog">
+	</FrameLayout>
+</RelativeLayout>
+
