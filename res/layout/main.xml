@@ -3,12 +3,6 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
 
-	<TextView
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:text="Hello World, MyActivity"
-		android:id="@+id/textView" />
-
 	<Button
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -16,8 +10,20 @@
 		android:id="@+id/btn_dialog"
 		android:layout_below="@+id/textView"
 		android:layout_centerHorizontal="true"
-		android:layout_marginTop="67dp"
 		android:onClick="displayDialog"/>
+
+	<Button
+		android:id="@+id/btn_previous"
+		android:text="Previous"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+
+	<Button
+		android:id="@+id/btn_next"
+		android:text="Next"
+		android:layout_alignParentRight="true"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
 
 	<FrameLayout
 		android:id="@+id/fl_fragment_container"

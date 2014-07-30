@@ -13,9 +13,9 @@ import android.view.ViewGroup;
 /**
  * Created by Da on 2014/5/8.
  */
-public class MyFragment extends Fragment
+public class MyFragment2 extends Fragment
 {
-	private static final String TAG = MyFragment.class.getSimpleName();
+	private static final String TAG = MyFragment2.class.getSimpleName();
 	private static final boolean DEBUG = true;
 
 	public void onAttach(Activity activity)
@@ -35,7 +35,7 @@ public class MyFragment extends Fragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		Log.d(TAG, "---> onCreateView");
-		View view = inflater.inflate(R.layout.fragment, container, false);
+		View view = inflater.inflate(R.layout.fragment2, container, false);
 		return view;
 	}
 

@@ -1,16 +1,16 @@
 package com.d2.LifeCycle;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
-public class MyActivity extends FragmentActivity
+public class MyActivity extends FragmentActivity implements View.OnClickListener
 {
 	private static final String TAG = MyActivity.class.getSimpleName();
 	private static final boolean DEBUG = true;
@@ -25,13 +25,20 @@ public class MyActivity extends FragmentActivity
 
 		fl = (FrameLayout) findViewById(R.id.fl_fragment_container);
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		fragmentManager.beginTransaction().replace(R.id.fl_fragment_container, new MyFragment()).commit();
+		fragmentManager.beginTransaction().replace(R.id.fl_fragment_container, new MyFragment1()).commit();
+
+		initResources();
+	}
+
+	private void initResources()
+	{
+		findViewById(R.id.btn_previous).setOnClickListener(this);
+		findViewById(R.id.btn_next).setOnClickListener(this);
 	}
 
 	@Override
 	protected void onRestart()
 	{
-
 		super.onRestart();
 		Log.d(TAG, "---> onRestart");
 	}
@@ -91,5 +98,21 @@ public class MyActivity extends FragmentActivity
 		builder.setTitle("Sample");
 		builder.setMessage("Click me and see the changes in life cycle");
 		builder.show();
+	}
+
+	@Override
+	public void onClick(View view)
+	{
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+		if (view.getId() == R.id.btn_previous) {
+			transaction.replace(R.id.fl_fragment_container, new MyFragment1());
+			transaction.commit();
+		}
+		else if (view.getId() == R.id.btn_next) {
+			transaction.replace(R.id.fl_fragment_container, new MyFragment2());
+			transaction.addToBackStack(null);
+			transaction.commit();
+		}
 	}
 }
