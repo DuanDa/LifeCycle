@@ -22,6 +22,7 @@ public class MyFragment2 extends Fragment
 	{
 		super.onAttach(activity);
 		Log.d(TAG, "---> onAttach");
+		setRetainInstance(true);
 	}
 
 	@Override
